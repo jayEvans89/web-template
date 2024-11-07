@@ -3,19 +3,19 @@
 
 This is a simple web-app template using the following tech stack
 
-- Sveltekit
-- DrizzleOrm
-- Turso Database
-- Storybook
-- Vitest
-- Auth from Lucia guide
-- Paraglide for translations
+- [Sveltekit](https://svelte.dev/)
+- [DrizzleOrm](https://orm.drizzle.team/)
+- [Turso Database](https://turso.tech/)
+- [Storybook](https://storybook.js.org/)
+- [Vitest](https://vitest.dev/)
+- [Auth from Lucia guide](https://lucia-auth.com/)
+- [Paraglide for translations](https://inlang.com/m/gerre34r/library-inlang-paraglideJs)
 
-Authentication had already been setup with **Google OAuth**
+Authentication has already been setup with **Google OAuth**
 
 ## Getting started
 
-1. To get started setup a database on Turso and add the url and auth tokens to the .env file.
+1. To get started setup a database on [Turso](https://turso.tech/) and add the url and auth tokens to the .env file.
 
 2. Now run `npm run db:push` to push the basic user and session schemas to the database.
 

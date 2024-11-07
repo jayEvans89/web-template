@@ -1,39 +1,24 @@
-# sv
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+# What is this?
 
-## Creating a project
+This is a simple web-app template using the following tech stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Sveltekit
+- DrizzleOrm
+- Turso Database
+- Storybook
+- Vitest
+- Auth from Lucia guide
+- Paraglide for translations
 
-```bash
-# create a new project in the current directory
-npx sv create
+Authentication had already been setup with **Google OAuth**
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Getting started
 
-## Developing
+1. To get started setup a database on Turso and add the url and auth tokens to the .env file.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+2. Now run `npm run db:push` to push the basic user and session schemas to the database.
 
-```bash
-npm run dev
+3. Next setup a client app on google cloud and add the id and secret to the .env.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-# web-template
+4. Run the app via `npm run dev`. You should now have a very basic app working with a guarded `/dashboard` route which you have to be logged in for.

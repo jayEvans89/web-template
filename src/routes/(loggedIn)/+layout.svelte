@@ -1,12 +1,17 @@
 <script lang="ts">
+	import * as m from '$lib/paraglide/messages.js';
 </script>
 
 <slot />
 <ul>
 	<li>
-		<a href="/">Go to landing page</a>
+		<a href="/">
+			{ m.go_to_landing_page()}
+		</a>
 	</li>
 	<li>
-		<a href="/logout">Logout</a>
+		<a href="/logout">
+			{ m.logout() }
+		</a>
 	</li>
 </ul>

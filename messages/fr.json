@@ -1,4 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Bonjour, {name} de fr!"
+  "dashboard": "Tableau de bord",
+  "go_to_landing_page": "Aller à la page de destination",
+  "hello_world": "Bonjour, {name} de fr!",
+  "logout": "Déconnexion"
 }

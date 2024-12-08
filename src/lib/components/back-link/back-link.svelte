@@ -3,8 +3,11 @@
 	import type { Snippet } from 'svelte';
 
 	interface Props {
+		/** The URL to navigate to when the link is clicked */
 		href: string;
-		children: Snippet;
+
+		/** The text content to show on the link */
+		children: Snippet<[string]>;
 	}
 	let { href, children }: Props = $props();
 </script>
@@ -25,7 +28,7 @@
 		/>
 	</svg>
 	<span class="back-link__text" data-testid="backLinkText">
-		{@render children()}
+		{@render children('')}
 	</span>
 </a>
 

@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `test` text NOT NULL;

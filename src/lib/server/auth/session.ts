@@ -73,7 +73,7 @@ export async function validateSessionToken(token: string): Promise<SessionValida
 }
 
 /**
- * Invalidate a session by deleting if from the database
+ * Invalidate a session by deleting it from the database
  * @param sessionId The session to invalidate
  */
 export async function invalidateSession(sessionId: string): Promise<void> {

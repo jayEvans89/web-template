@@ -1,13 +1,13 @@
 import { redirect } from "@sveltejs/kit";
 
 export const load = async (event) => {
-	if (!event.locals.user) {
+	if (!event.locals.loggedInUser) {
 		return redirect(302, "/login");
 	}
 
-	const user = event.locals.user;
+	const loggedInUser = event.locals.loggedInUser;
 
 	return {
-		user
+		loggedInUser
 	}
 }

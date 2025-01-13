@@ -1,5 +1,7 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
+
+	export let data;
 </script>
 
 <slot />
@@ -9,6 +11,13 @@
 			{ m.go_to_landing_page()}
 		</a>
 	</li>
+	{#if data.loggedInUser.role === 'admin'}
+		<li>
+			<a href="/admin">
+				Admin
+			</a>
+		</li>
+	{/if}
 	<li>
 		<a href="/logout">
 			{ m.logout() }

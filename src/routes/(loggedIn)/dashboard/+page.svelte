@@ -16,8 +16,8 @@
 </script>
 
 <h1>{m.dashboard()}</h1>
-<p>{m.hello_world({ name: data.user.name})}</p>
-<p>Email: { data.user.email }</p>
+<p>{m.hello_world({ name: data.loggedInUser.name})}</p>
+<p>Email: { data.loggedInUser.email }</p>
 
 <div>
   <p>Switch language</p>

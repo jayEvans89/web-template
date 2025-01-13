@@ -6,7 +6,7 @@ export const handle: Handle = async({ event, resolve}) => {
   i18n.handle()
   const token = event.cookies.get("session") ?? null;
 	if (token === null) {
-		event.locals.user = null;
+		event.locals.loggedInUser = null;
 		event.locals.session = null;
 		return resolve(event);
 	}
@@ -20,6 +20,6 @@ export const handle: Handle = async({ event, resolve}) => {
 
 	// Set the user and session in the locals object
 	event.locals.session = session;
-	event.locals.user = user;
+	event.locals.loggedInUser = user;
 	return resolve(event);
 }

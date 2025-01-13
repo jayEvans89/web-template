@@ -1,7 +1,7 @@
 import { generateSessionToken, createSession, setSessionTokenCookie } from "$lib/server/auth/session";
 import { google } from "$lib/server/auth/providers";
 import { decodeIdToken } from "arctic";
-import { createUser, getUserFromGoogleId } from "$lib/server/db/queries/user";
+import { createUserFromGoogle, getUserFromGoogleId } from "$lib/server/db/queries/user";
 
 import type { RequestEvent } from "@sveltejs/kit";
 import type { OAuth2Tokens } from "arctic";
@@ -56,7 +56,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 		});
 	}
 
-	const user = await createUser(googleUserId, username, email);
+	const user = await createUserFromGoogle(googleUserId, username, email, 'user');
 
 	const sessionToken = generateSessionToken();
 	const session = await createSession(sessionToken, user.id);

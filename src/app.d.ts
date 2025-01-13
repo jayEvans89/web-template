@@ -9,7 +9,7 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 		interface Locals {
-			user: User | null;
+			loggedInUser: User | null;
 			session: Session | null;
 		}
 	}

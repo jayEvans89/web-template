@@ -7,7 +7,7 @@
 		component: BackLink,
 		args: {
 			href: '#test',
-      children: 'Back to home'
+      text: 'Back to home'
 		},
 		argTypes: {
 			href: {
@@ -15,7 +15,7 @@
 				control: 'text',
 				type: 'string'
 			},
-			children: {
+			text: {
 				description: 'The text content to show on the link',
         control: 'text',
 				name: 'Link text'
@@ -30,7 +30,7 @@
 
 {#snippet template(args: Args<typeof Story>)}
 	<BackLink href={args.href as string}>
-		{args.children}
+		{args.text}
 	</BackLink>
 {/snippet}
 

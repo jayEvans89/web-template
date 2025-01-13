@@ -7,9 +7,9 @@
 		href: string;
 
 		/** The text content to show on the link */
-		children: Snippet<[string]>;
+		text: Snippet<[string]>;
 	}
-	let { href, children }: Props = $props();
+	let { href, text }: Props = $props();
 </script>
 
 <a {href} class="back-link" data-testid="backLink">
@@ -28,7 +28,7 @@
 		/>
 	</svg>
 	<span class="back-link__text" data-testid="backLinkText">
-		{@render children('')}
+		{@render text('')}
 	</span>
 </a>
 

@@ -7,7 +7,7 @@ import { userTable, type User } from '../schema/user.schema';
  * @param id The google id of the user
  * @returns The user
  */
-const getUserFromGoogleId = (id: string) => {
+export const getUserFromGoogleId = (id: string) => {
   return db.select().from(userTable).where(eq(userTable.googleId, id)).get()
 }
 
@@ -16,7 +16,7 @@ const getUserFromGoogleId = (id: string) => {
  * @param id The users id
  * @returns The user
  */
-const getUser = (id: number) => {
+export const getUser = (id: number) => {
   return db.select().from(userTable).where(eq(userTable.id, id)).get()
 }
 
@@ -24,7 +24,7 @@ const getUser = (id: number) => {
  * Get all users
  * @returns An array of users
  */
-const getAllUsers = () => {
+export const getAllUsers = () => {
   return db.select().from(userTable).all()
 }
 
@@ -34,7 +34,7 @@ const getAllUsers = () => {
  * @param limit The number of users to limit the page to
  * @returns An array of users
  */
-const getPaginatedUsers = (page?: number, limit = 10): Promise<User[]> => {
+export const getPaginatedUsers = (page?: number, limit = 10): Promise<User[]> => {
   if (page === undefined || page === 0) {
     return db.select().from(userTable).limit(limit)
   }
@@ -50,15 +50,7 @@ const getPaginatedUsers = (page?: number, limit = 10): Promise<User[]> => {
  * @param role The role of the user (user | admin)
  * @returns The user
  */
-const createUserFromGoogle = async (googleId: string, name: string, email: string, role: 'user' | 'admin') => {
+export const createUserFromGoogle = async (googleId: string, name: string, email: string, role: 'user' | 'admin') => {
   const users = await db.insert(userTable).values({ googleId, name, email, role }).returning().execute()
   return users[0]
-}
-
-export {
-  getUserFromGoogleId,
-  getUser,
-  getAllUsers,
-  getPaginatedUsers,
-  createUserFromGoogle
 }

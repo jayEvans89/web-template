@@ -1,7 +1,7 @@
 import { generateSessionToken, createSession, setSessionTokenCookie } from "$lib/server/auth/session";
 import { google } from "$lib/server/auth/providers";
 import { decodeIdToken } from "arctic";
-import { createUserFromGoogle, getUserFromGoogleId } from "$lib/server/db/queries/user";
+import { createUserFromGoogle, getUserFromGoogleId } from "$lib/server/database/models/user.model";
 
 import type { RequestEvent } from "@sveltejs/kit";
 import type { OAuth2Tokens } from "arctic";

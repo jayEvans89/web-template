@@ -1,4 +1,4 @@
-import { getPaginatedUsers } from '$lib/server/db/queries/user.js'
+import { getPaginatedUsers } from '$lib/server/database/models/user.model.js'
 
 export const load = async () => {
   return {

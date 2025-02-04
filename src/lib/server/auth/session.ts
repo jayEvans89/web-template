@@ -1,8 +1,8 @@
 import { encodeBase32LowerCaseNoPadding, encodeHexLowerCase } from '@oslojs/encoding';
-import { type Session, sessionTable } from "../../server/db/schema/session.schema";
-import { type User, userTable } from "../../server/db/schema/user.schema";
+import { type Session, sessionTable } from "../database/schema/session.schema";
+import { type User, userTable } from "../database/schema/user.schema";
 import { sha256 } from '@oslojs/crypto/sha2';
-import { db } from '$lib/server/db';
+import { db } from '$lib/server/database';
 import { eq } from 'drizzle-orm';
 import type { RequestEvent } from '@sveltejs/kit';
 

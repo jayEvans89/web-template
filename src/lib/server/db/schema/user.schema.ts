@@ -11,7 +11,10 @@ export const userTable = sqliteTable('user', {
     email: text('email').notNull(),
     role: text('role').notNull(),
     created: text('created')
-    .notNull()
-    .default(sql`(current_timestamp)`).notNull()
+        .notNull()
+        .default(sql`(current_timestamp)`).notNull(),
+    password: text('password'),
+    username: text('username')
 });
+
 export type User = InferSelectModel<typeof userTable>;

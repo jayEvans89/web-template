@@ -16,7 +16,7 @@ describe('oAuth button', () => {
       }
     })
 
-    const text = screen.getByTestId('oAuthButton')
+    const text = screen.getByTestId('oAuthButtonText')
     expect(text.innerHTML).toBe('Continue with Google')
   })
 

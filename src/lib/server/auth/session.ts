@@ -1,5 +1,6 @@
 import { encodeBase32LowerCaseNoPadding, encodeHexLowerCase } from '@oslojs/encoding';
-import { type User, type Session, sessionTable, userTable } from "../../server/db/schema";
+import { type Session, sessionTable } from "../../server/db/schema/session.schema";
+import { type User, userTable } from "../../server/db/schema/user.schema";
 import { sha256 } from '@oslojs/crypto/sha2';
 import { db } from '$lib/server/db';
 import { eq } from 'drizzle-orm';

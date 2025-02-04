@@ -17,7 +17,7 @@ describe('Back link', () => {
     cleanup()
   })
 
-  it('it renders with the correct text', () => {
+  it(': renders with the correct text', () => {
     render(BackLink, {
       props: {
         href: 'www.google.com',
@@ -29,7 +29,7 @@ describe('Back link', () => {
     expect(text.innerHTML).toBe('Back to Google<!---->')
   })
 
-  it('it sets the correct url', async () => {
+  it(': sets the correct url', async () => {
     render(BackLink, {
       props: {
         href: 'www.google.com',

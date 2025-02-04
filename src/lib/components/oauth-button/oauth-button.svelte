@@ -1,6 +1,9 @@
 <script lang="ts">
-	import type { Props } from './oauth-button-types';
-  import { icons } from './provider-logos'
+	import { icons } from './provider-logos';
+
+	interface Props {
+		provider: 'Google'
+	}
 
 	let { provider }: Props = $props();
 
@@ -9,20 +12,20 @@
 </script>
 
 <a class="oauth-button" data-testid="oAuthButton" href={providerEndpoint}>
-  <svg
-  width="24px"
-  height="24px"
-  viewBox="0 0 24 24"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true"
-  focusable="false"
->
-  <title>{provider} logo</title>
-  {@html providerLogo}
-</svg>
-	<span class="oauth-button__text">
-    Continue with {provider}
-  </span>
+	<svg
+		width="24px"
+		height="24px"
+		viewBox="0 0 24 24"
+		xmlns="http://www.w3.org/2000/svg"
+		aria-hidden="true"
+		focusable="false"
+	>
+		<title>{provider} logo</title>
+		{@html providerLogo}
+	</svg>
+	<span class="oauth-button__text" data-testid="oAuthButtonText">
+		Continue with {provider}
+	</span>
 </a>
 
 <style lang="scss">
@@ -39,9 +42,9 @@
 		justify-content: center;
 		color: currentColor;
 
-    &__text {
-      display: block;
-      margin: auto;
-    }
+		&__text {
+			display: block;
+			margin: auto;
+		}
 	}
 </style>

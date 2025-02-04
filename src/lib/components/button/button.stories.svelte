@@ -2,6 +2,7 @@
 	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
 	import Button from './button.svelte';
 	import type { Snippet } from 'svelte';
+	import { withActions } from '@storybook/addon-actions/decorator';
 
 	const { Story } = defineMeta({
 		title: 'Actions/Button',
@@ -9,7 +10,7 @@
 		args: {
       children: 'Submit' as unknown as Snippet<[string]>,
       loading: false,
-      variant: ''
+      variant: undefined
 		},
 		argTypes: {
 			children: {
@@ -22,11 +23,12 @@
         control: 'select',
         options: ['', 'secondary'],
         name: 'Button variant'
-      }
+      },
+			clickEvent: {
+				action: 'clickEvent'
+			}
 		},
-		actions: {
-			clickEvent: { table: { disable: false } }
-		}
+		decorators: [withActions]
 	});
 </script>
 

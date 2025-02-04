@@ -18,9 +18,9 @@
   }
 </script>
 
-<button class="{variant}" onclick={clickHandler}>
+<button class="{variant}" onclick={clickHandler} data-testid="button">
 	{#if loading}
-		<span class="loading-container">
+		<span class="loading-container" data-testid="loading-container">
 			Loading
 			<div class="loading-spinner">
 				<div></div>

@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm';
 import { db } from '../index'
-import { userTable, type User } from '../schema';
+import { userTable, type User } from '../schema/user.schema';
 
 /**
  * Get a user via their google id

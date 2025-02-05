@@ -1,0 +1,37 @@
+
+@mixin form-input {
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+  }
+}
+
+// @mixin form-input-label {
+//   .form-input__label {
+//     color: var(--color-primary);
+//   }
+// }
+
+@mixin form-input-hint {
+  .form-input__hint {
+    margin-bottom: 0;
+    font-size: var(--text-small);
+  }
+}
+
+@mixin form-input-input {
+  .form-input__input {
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    height: 40px;
+    padding: 0 8px;
+    box-shadow: 0px 0px 0px 0px, rgba(0, 0, 0, 0);
+
+    &--invalid {
+      border-color: var(--color-error);
+      background: var(--color-error-light);
+    }
+  }
+}

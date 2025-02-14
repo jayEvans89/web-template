@@ -3,6 +3,7 @@
 	import InputLayout from './input-layout.svelte';
 	import { withActions } from '@storybook/addon-actions/decorator';
 	import InputText from '$lib/components/input-text/input-text.svelte';
+	import type { Snippet } from 'svelte';
 
 	const { Story } = defineMeta({
 		title: 'Internal/Input Layout',
@@ -11,7 +12,8 @@
       label: "First name",
       hintText: "Enter your first name",
       id: 'inputId',
-      children: 'Input component goes here'
+      input: 'Input component goes here' as unknown as Snippet,
+			errorMessage: '' as unknown as Snippet<[string]>
 		},
 		argTypes: {
 		},
@@ -25,7 +27,10 @@
 
 {#snippet template(args: Args<typeof Story>)}
 	<InputLayout {...args}>
-    {args.children}
+		{#snippet input()}
+    	{args.input}
+		{/snippet}
+    {args.errorMessage}
   </InputLayout>
 {/snippet}
 

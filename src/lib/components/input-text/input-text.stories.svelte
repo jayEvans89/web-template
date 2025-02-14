@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
 	import InputText from './input-text.svelte';
-	import type { Snippet } from 'svelte';
+	import type { ComponentProps, Snippet } from 'svelte';
 	import { withActions } from '@storybook/addon-actions/decorator';
 
 	const { Story } = defineMeta({
@@ -12,19 +12,26 @@
       value: "John",
       hintText: "Enter your first name",
 			invalid: false,
-			name: 'first-name'
+			name: 'first-name',
+			customError: '',
+			required: true
 		},
 		argTypes: {
+			customError: {
+				control: {
+					type: 'text'
+				}
+			}
 		},
 		decorators: [withActions]
 	});
 </script>
 
 <script lang="ts">
-	setTemplate(template);
+	setTemplate(template as any);
 </script>
 
-{#snippet template(args: Args<typeof Story>)}
+{#snippet template({...args}: ComponentProps<typeof InputText>)}
 	<InputText {...args}></InputText>
 {/snippet}
 

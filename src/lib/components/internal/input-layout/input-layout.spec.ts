@@ -3,10 +3,10 @@ import { createRawSnippet } from 'svelte';
 import { afterEach, describe, expect, it } from 'vitest';
 import InputLayout from './input-layout.svelte';
 
-function getSlot(buttonText: string) {
+function getSlot() {
   return createRawSnippet(() => {
     return {
-      render: () => buttonText
+      render: () => `<input/>`
     };
   });
 }
@@ -21,7 +21,7 @@ describe('Input layout', () => {
       props: {
         label: "First name",
         id: "inputId",
-        children: getSlot('Input')
+        input: getSlot()
       }
     })
 
@@ -34,7 +34,7 @@ describe('Input layout', () => {
       props: {
         label: "First name",
         id: "inputId",
-        children: getSlot('Input'),
+        input: getSlot(),
       }
     })
 
@@ -47,7 +47,7 @@ describe('Input layout', () => {
       props: {
         label: "First name",
         id: "inputId",
-        children: getSlot('Input'),
+        input: getSlot(),
         hintText: "Enter your first name"
       }
     })

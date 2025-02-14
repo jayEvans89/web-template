@@ -16,7 +16,7 @@
 			children: {
 				description: 'The text content to show on the button',
         control: 'text',
-				name: 'Button text'
+				name: 'Slotted Text'
 			},
       variant: {
         description: 'The variant of the button',
@@ -43,3 +43,4 @@
 {/snippet}
 
 <Story name="Basic" />
+<Story name="Secondary" args={{variant: 'secondary'}} />

@@ -20,11 +20,11 @@
 		>{props.label}</label
 	>
 	{#if props.hintText}
-		<p class="form-input__hint" data-testid="layout-hint-text">{props.hintText}</p>
+		<p class="form-input__hint" data-testid="layout-hint-text" id={`${props.id}-hint-text`}>{props.hintText}</p>
 	{/if}
 
 	{#if props.invalid}
-		<p class="form-input__error" data-testid="layout-error-message">
+		<p class="form-input__error" data-testid="layout-error-message" id={`${props.id}-error-message`}>
 			{props.errorMessage}
 		</p>
 	{/if}

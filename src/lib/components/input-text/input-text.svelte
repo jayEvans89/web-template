@@ -61,6 +61,7 @@
 			type="text"
 			bind:value
 			id={inputId}
+			aria-describedby={`${inputId}-hint-text ${inputId}-error-message`}
 			required={props.required}
 			data-testid="textInput"
 			onkeydown={onKeydown}

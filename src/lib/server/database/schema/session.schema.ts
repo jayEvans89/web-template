@@ -14,4 +14,5 @@ export const sessionTable = sqliteTable("session", {
     mode: "timestamp"
   }).notNull()
 });
+
 export type Session = InferSelectModel<typeof sessionTable>;

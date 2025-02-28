@@ -11,7 +11,6 @@
 	let { children, variant, loading, clickEvent }: Props = $props();
 
   function clickHandler() {
-		console.log('click internal')
     if (!loading && clickEvent) {
       clickEvent();
     }

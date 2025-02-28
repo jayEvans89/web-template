@@ -1,7 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/svelte';
 import { afterEach, describe, expect, it } from 'vitest';
 import InputText from './input-text.svelte';
-import { createRawSnippet } from 'svelte';
 
 describe('Input text', () => {
   afterEach(() => {
@@ -70,30 +69,21 @@ describe('Input text', () => {
     })
 
     const errorMessage = screen.getByTestId('layout-error-message')
-    expect(errorMessage.innerHTML).toBe('<!---->This field is required<!---->')
+    expect(errorMessage.innerHTML).toBe('This field is required')
   })
 
   it(': renders with a custom error message', () => {
-
-    function customErrorMessage() {
-      return createRawSnippet(() => {
-        return {
-          render: () => `Custom error message`
-        };
-      });
-    }
-
     render(InputText, {
       props: {
         label: 'First name',
         name: 'first_name',
         hintText: 'Enter your first name',
         invalid: true,
-        customError: customErrorMessage()
+        customError: 'Custom error message'
       }
     })
 
     const errorMessage = screen.getByTestId('layout-error-message')
-    expect(errorMessage.innerHTML).toBe('<!----><!---->Custom error message<!---->')
+    expect(errorMessage.innerHTML).toBe('Custom error message')
   })
 })

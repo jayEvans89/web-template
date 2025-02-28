@@ -1,32 +1,27 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import LoadingSpinner from '../loading-spinner/loading-spinner.svelte';
 
 	interface Props {
 		children: Snippet<[string]>;
 		variant?: 'secondary';
 		loading?: boolean;
-    clickEvent?: () => void;
+		clickEvent?: () => void;
 	}
 
 	let { children, variant, loading, clickEvent }: Props = $props();
 
-  function clickHandler() {
-    if (!loading && clickEvent) {
-      clickEvent();
-    }
-  }
+	function clickHandler() {
+		if (!loading && clickEvent) {
+			clickEvent();
+		}
+	}
 </script>
 
-<button class="{variant}" onclick={clickHandler} data-testid="button">
+<button class={variant} onclick={clickHandler} data-testid="button">
 	{#if loading}
-		<span class="loading-container" data-testid="loading-container">
-			Loading
-			<div class="loading-spinner">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
+		<span data-testid="loading-container">
+			<LoadingSpinner></LoadingSpinner>
 		</span>
 	{:else}
 		{@render children('')}
@@ -35,7 +30,7 @@
 
 <style lang="scss">
 	button {
-    box-sizing: border-box;
+		box-sizing: border-box;
 		background-color: #000;
 		color: #fff;
 		padding: 12px 20px;
@@ -52,60 +47,13 @@
 		}
 	}
 
-  .secondary {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
+	.secondary {
+		background-color: #fff;
+		color: #000;
+		border: 1px solid #000;
 
-    &:hover {
-      background-color: #f5f5f5;
-    }
-  }
-
-	.loading-container {
-		display: flex;
-		gap: 8px;
-	}
-
-	.loading-spinner {
-		display: flex;
-		position: relative;
-		width: 16px;
-		height: 16px;
-		justify-content: center;
-		align-items: center;
-
-		div {
-			display: block;
-			position: absolute;
-			width: 16px;
-			height: 16px;
-			margin: 8px;
-			border: 2px solid currentColor;
-			border-radius: 50%;
-			animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-			border-color: currentColor transparent transparent transparent;
-
-			&:nth-child(1) {
-				animation-delay: -0.45s;
-			}
-
-			&:nth-child(2) {
-				animation-delay: -0.3s;
-			}
-
-			&:nth-child(3) {
-				animation-delay: -0.15s;
-			}
-		}
-	}
-
-	@keyframes lds-ring {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
+		&:hover {
+			background-color: #f5f5f5;
 		}
 	}
 </style>

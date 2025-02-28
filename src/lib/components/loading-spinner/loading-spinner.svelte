@@ -1,9 +1,11 @@
 <script lang="ts">
+	import * as m from '$lib/paraglide/messages.js';
+
 	interface Props {
 		loadingText?: string;
 	}
 
-	let { loadingText = 'Loading' }: Props = $props();
+	let { loadingText = m.loading() }: Props = $props();
 </script>
 
 <span class="loading-container" data-testid="loading-spinner-container">

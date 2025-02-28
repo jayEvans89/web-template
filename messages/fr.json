@@ -3,5 +3,6 @@
   "dashboard": "Tableau de bord",
   "go_to_landing_page": "Aller à la page de destination",
   "hello_world": "Bonjour, {name} de fr!",
+  "loading": "Chargement",
   "logout": "Déconnexion"
 }

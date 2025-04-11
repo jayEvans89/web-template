@@ -2,7 +2,6 @@
 	import '../styles/main.scss';
 
 	let { children } = $props();
-	console.log('layout page')
 </script>
 
 <!-- Header goes here -->

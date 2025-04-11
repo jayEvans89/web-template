@@ -59,9 +59,17 @@ export async function GET(event: RequestEvent): Promise<Response> {
 	const user = await createUserFromGoogle(googleUserId, username, email, 'user');
 
 	const sessionToken = generateSessionToken();
-	const session = await createSession(sessionToken, user.id);
 
-	setSessionTokenCookie(event, sessionToken, session.expiresAt);
+	try {
+		const session = await createSession(sessionToken, user.id);
+		setSessionTokenCookie(event, sessionToken, session.expiresAt);
+	} catch (error) {
+		console.log(error)
+		return new Response(null, {
+			status: 400,
+		});
+	}
+
 
 	return new Response(null, {
 		status: 302,

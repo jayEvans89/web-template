@@ -1,11 +1,19 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "components": {
+    "form": {
+      "password": {
+        "mediumPassword": "Could be stronger",
+        "strongPassword": "Strong password",
+        "weakPassword": "Too weak"
+      }
+    },
+    "loadingSpinner": {
+      "loading": "Loading"
+    }
+  },
   "dashboard": "Dashboard",
   "go_to_landing_page": "Go to landing page",
   "hello_world": "Hello, {name} from en!",
-  "loading": "Loading",
-  "logout": "Logout",
-  "mediumPassword": "Could be stronger",
-  "strongPassword": "Strong password",
-  "weakPassword": "Too weak"
+  "logout": "Logout"
 }

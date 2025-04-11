@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "c1742866-a7fa-4cf6-9425-496607b10981",
+  "id": "2e682d5e-6ceb-4bc0-b91a-7886f21ac490",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "session": {
@@ -86,11 +86,26 @@
           "notNull": true,
           "autoincrement": false
         },
-        "test": {
-          "name": "test",
+        "created": {
+          "name": "created",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
+          "autoincrement": false,
+          "default": "(current_timestamp)"
+        },
+        "password": {
+          "name": "password",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "username": {
+          "name": "username",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
           "autoincrement": false
         }
       },

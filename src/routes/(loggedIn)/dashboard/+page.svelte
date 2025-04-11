@@ -1,17 +1,11 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import * as m from '$lib/paraglide/messages.js';
-	import type { AvailableLanguageTag } from '$lib/paraglide/runtime.js';
-	import { i18n } from '$lib/i18n.js';
-  import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
+	import { locales, setLocale } from '$lib/paraglide/runtime.js';
 
 	export let data;
 
-  function switchToLanguage(newLanguage: AvailableLanguageTag) {
-		const canonicalPath = i18n.route($page.url.pathname);
-		const localisedPath = i18n.resolveRoute(canonicalPath, newLanguage);
-		goto(localisedPath);
+  function switchToLanguage(newLanguage: typeof locales[number]) {
+		setLocale(newLanguage);
 	}
 </script>
 
@@ -21,6 +15,6 @@
 
 <div>
   <p>Switch language</p>
-	<button onclick={() => switchToLanguage('en')}>en</button>
-	<button onclick={() => switchToLanguage('fr')}>fr</button>
+	<button onclick={() => switchToLanguage(locales[0])}>en</button>
+	<button onclick={() => switchToLanguage(locales[1])}>fr</button>
 </div>

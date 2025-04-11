@@ -1,19 +1,16 @@
 <script lang="ts">
 	import '../styles/main.scss';
-	import { i18n } from '$lib/i18n';
-	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 
 	let { children } = $props();
+	console.log('layout page')
 </script>
 
 <!-- Header goes here -->
 
 <main>
-  <div class="container">
-    <ParaglideJS {i18n}>
-      {@render children()}
-    </ParaglideJS>
-  </div>
+	<div class="container">
+		{@render children()}
+	</div>
 </main>
 
 <!-- Footer goes here -->
@@ -25,8 +22,8 @@
 		height: 100vh;
 	}
 
-  .container {
-    width: 90vw;
+	.container {
+		width: 90vw;
 		max-width: 1100px;
 		margin: 0 auto;
 		padding-top: 24px;
@@ -34,5 +31,5 @@
 		@media (min-width: 420px) {
 			width: 80vw;
 		}
-  }
+	}
 </style>

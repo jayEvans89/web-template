@@ -11,5 +11,7 @@ CREATE TABLE `user` (
 	`google_id` text,
 	`email` text NOT NULL,
 	`role` text NOT NULL,
-	`test` text NOT NULL
+	`created` text DEFAULT (current_timestamp) NOT NULL,
+	`password` text,
+	`username` text
 );

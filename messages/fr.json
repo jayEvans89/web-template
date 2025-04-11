@@ -1,11 +1,20 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "components": {
+    "form": {
+      "password": {
+        "mediumPassword": "Pourrait être plus fort",
+        "strongPassword": "Mot de passe fort",
+        "weakPassword": "Trop faible"
+      }
+    },
+    "loadingSpinner": {
+      "loading": "Chargement"
+    }
+  },
   "dashboard": "Tableau de bord",
   "go_to_landing_page": "Aller à la page de destination",
   "hello_world": "Bonjour, {name} de fr!",
-  "loading": "Chargement",
   "logout": "Déconnexion",
-  "mediumPassword": "Pourrait être plus fort",
-  "strongPassword": "Mot de passe fort",
-  "weakPassword": "Trop faible"
+  "test": "Tester une nouvelle traduction"
 }

@@ -4,5 +4,8 @@
   "go_to_landing_page": "Aller à la page de destination",
   "hello_world": "Bonjour, {name} de fr!",
   "loading": "Chargement",
-  "logout": "Déconnexion"
+  "logout": "Déconnexion",
+  "mediumPassword": "Pourrait être plus fort",
+  "strongPassword": "Mot de passe fort",
+  "weakPassword": "Trop faible"
 }

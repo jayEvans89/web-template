@@ -4,5 +4,8 @@
   "go_to_landing_page": "Go to landing page",
   "hello_world": "Hello, {name} from en!",
   "loading": "Loading",
-  "logout": "Logout"
+  "logout": "Logout",
+  "mediumPassword": "Could be stronger",
+  "strongPassword": "Strong password",
+  "weakPassword": "Too weak"
 }

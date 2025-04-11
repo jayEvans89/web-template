@@ -6,7 +6,7 @@
 		title: 'Loading/Loading spinner',
 		component: LoadingSpinner,
 		args: {
-			loadingText: undefined
+			loadingText: ''
 		}
 	});
 </script>
@@ -16,7 +16,7 @@
 </script>
 
 {#snippet template(args: Args<typeof Story>)}
-	<LoadingSpinner {...args}></LoadingSpinner>
+	<LoadingSpinner loadingText={args.loadingText !== '' ? args.loadingText : undefined}></LoadingSpinner>
 {/snippet}
 
 <Story name="Basic" />

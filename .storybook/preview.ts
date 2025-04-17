@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/svelte';
 import '../src/styles/main.scss'
-import {setLanguageTag} from '../src/lib/paraglide/runtime'
+import {setLocale} from '../src/lib/paraglide/runtime'
 
 export const globalTypes = {
 	language: {
@@ -38,7 +38,7 @@ const preview: Preview = {
 	decorators: [
 		(_story, context) => {
 			const selectedLanguage = context.globals.language || 'en';
-			setLanguageTag(selectedLanguage);
+			setLocale(selectedLanguage);
 			return _story();
 		},
 	]

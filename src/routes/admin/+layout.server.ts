@@ -2,12 +2,7 @@ import { redirect } from '@sveltejs/kit';
 
 export const load = async (event) => {
   if (!event.locals.loggedInUser) {
-    return {
-      status: 302,
-      headers: {
-        location: "/login"
-      }
-    };
+    return redirect(302, '/login')
   }
 
   if (event.locals.loggedInUser.role !== 'admin') {

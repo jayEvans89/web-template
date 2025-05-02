@@ -2,7 +2,7 @@
 	import * as m from '$lib/paraglide/messages.js';
 	import { locales, setLocale } from '$lib/paraglide/runtime.js';
 
-	export let data;
+	let { data } = $props();
 
   function switchToLanguage(newLanguage: typeof locales[number]) {
 		setLocale(newLanguage);

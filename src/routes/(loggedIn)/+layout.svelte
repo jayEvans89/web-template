@@ -1,10 +1,10 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
 
-	export let data;
+	let { children, data } = $props();
 </script>
 
-<slot />
+{@render children()}
 <ul>
 	<li>
 		<a href="/">

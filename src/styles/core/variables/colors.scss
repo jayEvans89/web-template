@@ -4,4 +4,95 @@
 
   --color-error: #dc3545;
   --color-error-light: #f8d7da;
+
+/** Base colors */
+--clr-dark-a0: #000000;
+--clr-light-a0: #ffffff;
+
+--clr-text: var(--clr-dark-a0);
+
+/** Theme primary colors */
+--clr-primary-a0: #ff8119;
+--clr-primary-a10: #f2822b;
+--clr-primary-a20: #e58239;
+--clr-primary-a30: #d88345;
+--clr-primary-a40: #cb8350;
+--clr-primary-a50: #bd835a;
+
+/** Theme surface colors */
+--clr-surface-a0: #ffffff;
+--clr-surface-a10: #f0f0f0;
+--clr-surface-a20: #e1e1e1;
+--clr-surface-a30: #d3d3d3;
+--clr-surface-a40: #c5c5c5;
+--clr-surface-a50: #b6b6b6;
+
+  @media(prefers-color-scheme: dark) {
+/** Base colors */
+--clr-dark-a0: #000000;
+--clr-light-a0: #ffffff;
+
+--clr-text: var(--clr-light-a0);
+
+/** Theme primary colors */
+--clr-primary-a0: #ff8119;
+--clr-primary-a10: #ff9039;
+--clr-primary-a20: #ff9e53;
+--clr-primary-a30: #ffac6c;
+--clr-primary-a40: #ffba84;
+--clr-primary-a50: #ffc89c;
+
+/** Theme surface colors */
+--clr-surface-a0: #040f24;
+--clr-surface-a10: #1e2639;
+--clr-surface-a20: #363d4e;
+--clr-surface-a30: #505565;
+--clr-surface-a40: #6b6f7d;
+--clr-surface-a50: #878a96;
+  }
+
+
+// Potential light theme
+// /** Base colors */
+// --clr-dark-a0: #000000;
+// --clr-light-a0: #ffffff;
+
+// /** Theme primary colors */
+// --clr-primary-a0: #ff8119;
+// --clr-primary-a10: #f2822b;
+// --clr-primary-a20: #e58239;
+// --clr-primary-a30: #d88345;
+// --clr-primary-a40: #cb8350;
+// --clr-primary-a50: #bd835a;
+
+// /** Theme surface colors */
+// --clr-surface-a0: #ffffff;
+// --clr-surface-a10: #f0f0f0;
+// --clr-surface-a20: #e1e1e1;
+// --clr-surface-a30: #d3d3d3;
+// --clr-surface-a40: #c5c5c5;
+// --clr-surface-a50: #b6b6b6;
+
+
+// Potential dark theme
+/** Base colors */
+// --clr-dark-a0: #000000;
+// --clr-light-a0: #ffffff;
+
+// /** Theme primary colors */
+// --clr-primary-a0: #ff8119;
+// --clr-primary-a10: #ff9039;
+// --clr-primary-a20: #ff9e53;
+// --clr-primary-a30: #ffac6c;
+// --clr-primary-a40: #ffba84;
+// --clr-primary-a50: #ffc89c;
+
+// /** Theme surface colors */
+// --clr-surface-a0: #040f24;
+// --clr-surface-a10: #1e2639;
+// --clr-surface-a20: #363d4e;
+// --clr-surface-a30: #505565;
+// --clr-surface-a40: #6b6f7d;
+// --clr-surface-a50: #878a96;
+
 }

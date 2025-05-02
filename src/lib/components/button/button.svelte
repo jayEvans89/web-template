@@ -6,10 +6,11 @@
 		children: Snippet<[string]>;
 		variant?: 'secondary';
 		loading?: boolean;
+		loadingText?: string;
 		clickEvent?: () => void;
 	}
 
-	let { children, variant, loading, clickEvent }: Props = $props();
+	let { children, variant, loading, clickEvent, loadingText }: Props = $props();
 
 	function clickHandler() {
 		if (!loading && clickEvent) {
@@ -21,7 +22,7 @@
 <button class={variant} onclick={clickHandler} data-testid="button">
 	{#if loading}
 		<span data-testid="loading-container">
-			<LoadingSpinner></LoadingSpinner>
+			<LoadingSpinner loadingText={loadingText || undefined}></LoadingSpinner>
 		</span>
 	{:else}
 		{@render children('')}
@@ -31,8 +32,8 @@
 <style lang="scss">
 	button {
 		box-sizing: border-box;
-		background-color: #000;
-		color: #fff;
+		background-color: var(--clr-primary-a20);
+		color: var(--clr-dark-a0);
 		padding: 12px 20px;
 		border-radius: 8px;
 		border: none;
@@ -41,15 +42,17 @@
 		font-weight: 500;
 		transition: 250ms ease-in-out;
 		will-change: background-color, color;
+		display: inline-block;
+		width: fit-content;
 
 		&:hover {
-			background-color: #333;
+			background-color: var(--clr-primary-a10);;
 		}
 	}
 
 	.secondary {
-		background-color: #fff;
-		color: #000;
+		background-color: var(--clr-surface-a50);
+		color: var(-clr-light-a0);
 		border: 1px solid #000;
 
 		&:hover {

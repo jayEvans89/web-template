@@ -5,7 +5,7 @@
 		loadingText?: string;
 	}
 
-	let { loadingText = m.loading() }: Props = $props();
+	let { loadingText = m['components.loadingSpinner.loading']() }: Props = $props();
 </script>
 
 <span class="loading-container" data-testid="loading-spinner-container">

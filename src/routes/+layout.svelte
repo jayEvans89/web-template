@@ -16,7 +16,6 @@
 
 <style lang="scss">
 	main {
-		background: rgb(241, 242, 251);
 		width: 100vw;
 		height: 100vh;
 	}

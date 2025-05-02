@@ -11,7 +11,7 @@
 	const providerLogo = $derived(icons[provider.toLowerCase()]);
 </script>
 
-<a class="oauth-button" data-testid="oAuthButton" href={providerEndpoint}>
+<a class="oauth-button oauth-button--{provider.toLowerCase()}" data-testid="oAuthButton" href={providerEndpoint}>
 	<svg
 		width="24px"
 		height="24px"
@@ -30,7 +30,7 @@
 
 <style lang="scss">
 	.oauth-button {
-		display: block;
+		display: flex;
 		border-radius: 9999px;
 		padding: 0 40px;
 		height: 48px;
@@ -41,6 +41,12 @@
 		align-items: center;
 		justify-content: center;
 		color: currentColor;
+		gap: 8px;
+
+		&--google {
+			background: #fff;
+			color: #000;
+		}
 
 		&__text {
 			display: block;

@@ -76,3 +76,13 @@ ul {
     }
   }
 }
+
+a {
+  color: var(--clr-primary-a0);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--clr-primary-a20);
+    text-decoration: underline;
+  }
+}

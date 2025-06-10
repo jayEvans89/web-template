@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import InputLayout from './input-layout.svelte';
 	import { withActions } from '@storybook/addon-actions/decorator';
 	import InputText from '$lib/components/input-text/input-text.svelte';
@@ -15,14 +15,9 @@
       input: 'Input component goes here' as unknown as Snippet,
 			errorMessage: ''
 		},
-		argTypes: {
-		},
+		render: template,
 		decorators: [withActions]
 	});
-</script>
-
-<script lang="ts">
-	setTemplate(template as any);
 </script>
 
 {#snippet template({...args}: ComponentProps<typeof InputLayout>)}

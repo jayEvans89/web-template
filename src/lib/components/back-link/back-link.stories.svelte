@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import BackLink from './back-link.svelte';
 	import type { Snippet } from 'svelte';
 
@@ -21,16 +21,13 @@
         control: 'text',
 				name: 'Link text'
 			}
-		}
+		},
+		render: template
 	});
 </script>
 
-<script lang="ts">
-	setTemplate(template);
-</script>
-
-{#snippet template(args: Args<typeof Story>)}
-	<BackLink href={args.href as string}>
+{#snippet template({ ...args })}
+	<BackLink href={args.href}>
 		{args.children}
 	</BackLink>
 {/snippet}

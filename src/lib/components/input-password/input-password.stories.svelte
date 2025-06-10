@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import InputPassword from './input-password.svelte';
 	import type { ComponentProps, Snippet } from 'svelte';
 	import { withActions } from '@storybook/addon-actions/decorator';
@@ -25,16 +25,13 @@
 				}
 			}
 		},
+		render: template,
 		decorators: [withActions]
 	});
 </script>
 
-<script lang="ts">
-	setTemplate(template as any);
-</script>
-
-{#snippet template({...args}: ComponentProps<typeof InputPassword>)}
-	<InputPassword {...args}></InputPassword>
+{#snippet template({...args})}
+	<InputPassword label={args.label} name={args.name} {...args}/>
 {/snippet}
 
 <Story name="Basic" />

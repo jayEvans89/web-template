@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import OauthButton from './oauth-button.svelte';
 
 	const { Story } = defineMeta({
@@ -7,16 +7,13 @@
 		component: OauthButton,
 		args: {
 			provider: 'Google'
-		}
+		},
+		render: template,
 	});
 </script>
 
-<script lang="ts">
-	setTemplate(template);
-</script>
-
-{#snippet template(args: Args<typeof Story>)}
-	<OauthButton provider={args.provider as 'Google'} />
+{#snippet template({ ...args })}
+	<OauthButton provider={args.provider} />
 {/snippet}
 
 <Story name="Basic" />

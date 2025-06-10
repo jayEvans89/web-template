@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { defineMeta, setTemplate, type Args } from '@storybook/addon-svelte-csf';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Button from './button.svelte';
 	import type { Snippet } from 'svelte';
 	import { withActions } from '@storybook/addon-actions/decorator';
@@ -28,15 +28,12 @@
 				action: 'clickEvent'
 			}
 		},
+		render: template,
 		decorators: [withActions]
 	});
 </script>
 
-<script lang="ts">
-	setTemplate(template);
-</script>
-
-{#snippet template(args: Args<typeof Story>)}
+{#snippet template({...args})}
 	<Button {...args} clickEvent={() => {}}>
 		{args.children}
 	</Button>

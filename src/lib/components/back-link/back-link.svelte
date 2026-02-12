@@ -10,6 +10,10 @@
 		children: Snippet<[string]>;
 	}
 	let { href, children }: Props = $props();
+
+	let test = $state(false);
+
+	console.log(test);
 </script>
 
 <a {href} class="back-link" data-testid="backLink">
@@ -37,7 +41,7 @@
 		text-decoration: none;
     cursor: pointer;
     margin-bottom: 8px;
-    color: currentColor;
+    color: var(--clr-highlight);
 
     @media (prefers-reduced-motion: no-preference) {
       &:hover {

@@ -7,11 +7,11 @@
   }
 }
 
-// @mixin form-input-label {
-//   .form-input__label {
-//     color: var(--color-primary);
-//   }
-// }
+@mixin form-input-label {
+  .form-input__label {
+    color: var(--clr-text);
+  }
+}
 
 @mixin form-input-hint {
   .form-input__hint {

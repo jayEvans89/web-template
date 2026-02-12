@@ -33,7 +33,7 @@
 	button {
 		box-sizing: border-box;
 		background-color: var(--clr-primary-a20);
-		color: var(--clr-dark-a0);
+		color: var(--clr-light-a0);
 		padding: 12px 20px;
 		border-radius: 8px;
 		border: none;

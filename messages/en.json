@@ -10,6 +10,9 @@
     },
     "loadingSpinner": {
       "loading": "Loading"
+    },
+    "test": {
+      "test": "Testing a new translation"
     }
   },
   "dashboard": "Dashboard",

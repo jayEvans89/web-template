@@ -1,6 +1,7 @@
-import type { Preview } from '@storybook/svelte';
+import type { Preview } from '@storybook/sveltekit';
 import '../src/styles/main.scss'
 import {setLocale} from '../src/lib/paraglide/runtime'
+import Container from '../src/lib/components/container/container.svelte';
 
 export const globalTypes = {
 	language: {
@@ -41,6 +42,7 @@ const preview: Preview = {
 			setLocale(selectedLanguage);
 			return _story();
 		},
+		() => Container
 	]
 };
 

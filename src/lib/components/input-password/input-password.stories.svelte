@@ -2,7 +2,7 @@
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import InputPassword from './input-password.svelte';
 	import type { ComponentProps, Snippet } from 'svelte';
-	import { withActions } from '@storybook/addon-actions/decorator';
+	import { withActions } from 'storybook/actions/decorator';
 
 	const { Story } = defineMeta({
 		title: 'Form/Input password',

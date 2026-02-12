@@ -36,6 +36,7 @@
 	@use '$styles/core/mixins/form-input' as *;
 
 	@include form-input;
+	@include form-input-label;
 	@include form-input-hint;
 	@include form-input-error;
 </style>

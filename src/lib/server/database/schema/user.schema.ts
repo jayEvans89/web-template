@@ -10,9 +10,8 @@ export const userTable = sqliteTable('user', {
     googleId: text('google_id'),
     email: text('email').notNull(),
     role: text('role').notNull(),
-    created: text('created')
-        .notNull()
-        .default(sql`(current_timestamp)`).notNull(),
+    created: text('created').default(sql`(current_timestamp)`).notNull(),
+    updatedAt: text('updated_at').default(sql`(current_timestamp)`).notNull(),
     password: text('password'),
     username: text('username')
 });

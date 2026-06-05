@@ -5,8 +5,7 @@ export default defineConfig({
   schema: './src/lib/server/database/schema',
   verbose: true,
   strict: true,
-  dialect: 'sqlite',
-  driver: 'turso',
+  dialect: 'turso',
   dbCredentials: {
     url: process.env.DATABASE_URL,
     authToken: process.env.DATABASE_AUTH_TOKEN

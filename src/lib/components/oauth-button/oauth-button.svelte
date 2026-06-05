@@ -2,7 +2,7 @@
 	import { icons } from './provider-logos';
 
 	interface Props {
-		provider: 'Google'
+		provider: 'Google';
 	}
 
 	let { provider }: Props = $props();
@@ -11,7 +11,12 @@
 	const providerLogo = $derived(icons[provider.toLowerCase()]);
 </script>
 
-<a class="oauth-button oauth-button--{provider.toLowerCase()}" data-testid="oAuthButton" href={providerEndpoint}>
+<a
+	class="oauth-button oauth-button--{provider.toLowerCase()}"
+	data-testid="oAuthButton"
+	href={providerEndpoint}
+	rel="external"
+>
 	<svg
 		width="24px"
 		height="24px"
@@ -21,6 +26,7 @@
 		focusable="false"
 	>
 		<title>{provider} logo</title>
+		<!-- eslint-disable -->
 		{@html providerLogo}
 	</svg>
 	<span class="oauth-button__text" data-testid="oAuthButtonText">

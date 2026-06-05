@@ -1,5 +1,4 @@
 <script lang="ts">
-	import BackLink from '$lib/components/back-link/back-link.svelte';
 	import Button from '$lib/components/button/button.svelte';
 	import InputText from '$lib/components/input-text/input-text.svelte';
 	import OathButton from '$lib/components/oauth-button/oauth-button.svelte';
@@ -7,7 +6,7 @@
 	let username = $state('');
 
 	let usernameErrorMessage: string | undefined = $state(undefined);
-	let usernameError = $state(false)
+	let usernameError = $state(false);
 
 	function validation() {
 		if (username === '') {
@@ -37,8 +36,7 @@
 				bind:value={username}
 				invalid={usernameError}
 				customError={usernameErrorMessage}
-			>
-			</InputText>
+			></InputText>
 			<Button clickEvent={validation}>Test validation</Button>
 		</form>
 	</div>
